@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome 007</title>
+  <style>
+    .clue {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <h1>Welcome 007</h1>
+    <p>There is a very important tool that you will need on this mission, but its too dangerous to give this to you straight, so I have encoded this message</p>
+    <p>Knowing you, I am sure you will be able to decode this with no problem</p>
+    <audio autoplay>
+      <source src="/assets/morse.wav" type="audio/wav">
+    </audio>
+    <p id="clue-one" class="clue">clue 1: what is that annoying sound?</p>
+    <p id="clue-two" class="clue">clue 2: hmmm how to control that sound</p>
+  </center>
+
+  <script>
+    window.addEventListener("click", function(){
+      var clueOne = document.getElementById('clue-one');
+      var styleOne = window.getComputedStyle(clueOne, null);
+      if (styleOne.display === 'none') {
+        clueOne.style.display = 'block';
+      } else {
+        var clueTwo = document.getElementById('clue-two');
+        var styleTwo = window.getComputedStyle(clueTwo, null);
+        if (styleTwo.display === 'none') {
+          clueTwo.style.display = 'block';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

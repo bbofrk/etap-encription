@@ -6,7 +6,17 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   // res.send('hello express');
+  res.sendFile('public/index.html', {root: __dirname});
+});
+
+app.get('/help', (req, res) => {
+  // res.send('hello express');
   res.sendFile('public/help.html', {root: __dirname});
+});
+
+app.get('/qrcode', (req, res) => {
+  // res.send('hello express');
+  res.sendFile('public/qrcode.html', {root: __dirname});
 });
 
 app.get('/message', (req, res) => {
